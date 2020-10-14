@@ -1,5 +1,7 @@
 #include <iostream>
 #include <list>
+#include <iterator>
+#include "linkedlist.h"
 using namespace std;
 
 
@@ -15,7 +17,7 @@ int findLargest(const list<int>& aList) {
 
 bool findElement(const list<int>& aList, int element) {
 	bool found = false;
-	for (list<int>::const_iterator it = aList.begin(); it != aList.end(); it++) {
+	for (auto it = aList.begin(); it != aList.end(); it++) {
 		if (*it == element) {
 			found = true;
 		}
@@ -23,13 +25,18 @@ bool findElement(const list<int>& aList, int element) {
 	return found;
 }
 
-int main() {
-	list<int> aList;
-	for (int i = 0; i < 100; i++) {
-		aList.push_back(i);
-	}
+void reverseList(list<int> aList) {
+	int temp;
 
-	cout << findElement(aList, 19) << endl;
+
+}
+
+int main() {
+	LinkedList lL;
+	lL.push(10);
+	lL.push(20);
+	lL.print();
+
 
 return 0;
 }
