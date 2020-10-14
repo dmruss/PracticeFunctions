@@ -20,7 +20,15 @@ struct LinkedList {
   }
 
   void reverse() {
-
+      Node* current = head;
+      Node *next = NULL, *prev = NULL;
+      while (current != NULL) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+      }
+      head = prev;
   }
 
   void push(Node aNode) {
