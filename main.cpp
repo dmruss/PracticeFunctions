@@ -25,18 +25,54 @@ bool findElement(const list<int>& aList, int element) {
 	return found;
 }
 
-void reverseList(list<int> aList) {
-	int temp;
-
-
+void printPrimes(int count) {
+	for (int i = 0; i < count; i++ ) {
+		bool prime = (i%2 != 0) && (i%3 != 0) && (i%5 != 0) && (i%7 != 0) || (i == 2) || (i == 3) || (i == 5 )|| (i==7);
+		if (prime) {
+			cout << i << endl;
+		}
+	}
 }
+
+void fizzBuzz(int count) {
+	for (int i = 0; i < count; i++) {
+		if (i%15 == 0) {
+			cout << "fizzbuzz"<<endl;
+		}
+		else if (i%3 == 0) {
+			cout << "fizz"<<endl;
+		}
+		else if ( i%5 == 0) {
+			cout << "buzz"<<endl;
+		}
+		else {
+			cout << i << endl;
+		}
+
+	}
+}
+
+void fibonacci(int count ) {
+	int temp1 = 0, temp2 = 1;
+	cout << temp1 << endl;
+	cout << temp2 << endl;
+	for (int i = 0; i < count; i++) {
+		temp1 = temp1 + temp2;
+		cout << temp1 << endl;
+		temp2 = temp1 + temp2;
+		cout << temp2 << endl;
+	}
+}
+
 
 int main() {
 	LinkedList lL;
-	lL.push(10);
-	lL.push(20);
+	for (int i = 0; i < 100; i+=10) {
+		lL.push(i);
+	}
 	lL.print();
-
+	lL.reverse();
+	lL.print();
 
 return 0;
 }
